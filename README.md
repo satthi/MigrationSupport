@@ -10,12 +10,15 @@ CSVや固定長ファイルをPostgresのCOPY/MysqlのLOAD DATAを利用して
 
 使い方
 ①通常通りPluginを設置。
+
 ②モデルで
 <pre>
 public $actsAs = array('MigrationSupport.MigrationSupport');
 </pre>
 を記述。
+
 ③
+
 (CSVファイル)
 <pre>
     public function csv() {
