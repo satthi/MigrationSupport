@@ -9,6 +9,7 @@ CSVや固定長ファイルをPostgresのCOPY/MysqlのLOAD DATAを利用して
 ***********************************************************************
 
 使い方
+
 ①通常通りPluginを設置。
 
 ②モデルで
@@ -17,7 +18,7 @@ public $actsAs = array('MigrationSupport.MigrationSupport');
 </pre>
 を記述。
 
-③
+③記述方法（ここではモデルで記述をしています。その他で呼ぶ場合はそれ相応に書き換えてください。)
 
 (CSVファイル)
 <pre>
@@ -43,8 +44,8 @@ public $actsAs = array('MigrationSupport.MigrationSupport');
             //テーブルを作成するかどうか。
             'create_flag' => true,
         );
+        //behaviorのメソッド呼び込み
         $this->import($info);
-        exit;
     }
 </pre>
 
@@ -73,8 +74,8 @@ public $actsAs = array('MigrationSupport.MigrationSupport');
             //ファイルの種類を指定。
             'file_type' => 'fixed_length'
         );
-        $this->Iko->import($info);
-        exit;
+        //behaviorのメソッド呼び込み
+        $this->import($info);
     }
 </pre>
 
